@@ -182,9 +182,13 @@ let cardsEl = document.getElementById("cards-el")
 function newCard() {
     console.log("Drawing a new card from the deck")
     // Add to the sum
-    let card1 = 7
-    sum += card1
+    let card3 = 7
+    sum += card3
     renderGame()
+
+    cards.push(card3)
+    // console.log(cards)
+    cardsEl.textContent = "Cards:" + cards
 }
 
 // ADD TO THE SUM WHEN NEWCARD IS CLICKED
@@ -197,9 +201,86 @@ function startGame() {
 // ARRAY: this is list of items (ie to store all our cards) []. NB: Array start at zero [0]
 let cards = [firstCard, secondCard] //array list of item
 
+
+
 // INTRO TO ARRAY
+// Arrays are ordered list of items
+
+// let featuredPosts = [
+//     "Check out my Netflix clone",
+//     "Here's the code for my project",
+//     "I've just relaunched my portfolio"
+// ]
+
+// let experience = [
+//     "Computer programmer",
+//     "Html expert",
+//     "Css expert",
+//     "Still learning javaScript"
+// ]
+// // Array indexes
+
+// console.log(experience[1])
+// console.log(experience[2])
+// console.log(experience[0])
+
+// console.log(featuredPosts.length)
+
+// Array with multiple data types
+// Array - ordered list of items - composite / complex data type
+// let mySelf = [
+//     "Sodiq",
+//     19,
+//     true
+// ]
+
+// Adding and removing items form arrays
+// let card = [7, 4]
+// If we want to add anything to an array u use a method called push
+// card.push(6)
+// console.log(card)
+
+// let messages = [
+//     "Hey, how's it going?",
+//     "I'm great, thank you! How about you?",
+//     "All good. Been working on my portfolio lately."
+// ]
+
+// let newMessage = "Same here"
+// messages.push(newMessage)
+// console.log(messages)
+
+// How to remove the last item in an array
+// messages.pop()
+// console.log(messages)
+// You can do this multiple times to remove the last item of an array
+
+// COUNTING IN JAVASCRIPT
+
+// Count to ten
+
+// We need to Specify...
+
+// Where should we START counting?
+// Where is the finish line?
+// What's the STEP SIZE we should use?
 
 
+//       START              FINISH              STEP SIZE
+// for (let count = 10;         count < 21;        count += 1) {
+//     console.log(count)
+// }
 
+// WRITE YOUR FIRST LOOP
+
+// for (let count = 0; count < 6; count += 1) {
+//     console.log(count)
+// }
+// for (let i = 10; i < 101; i += 10) {
+//     console.log(i)
+// }
+
+
+// FOR LOOPS AND ARRAY
 
 
