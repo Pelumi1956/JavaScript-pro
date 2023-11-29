@@ -119,8 +119,8 @@
 
 // ADD THE MESSAGE VARIABLE
 
-let firstCard = 10
-let secondCard = 4
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let sum = firstCard + secondCard
 
 let hasBlackJack = false
@@ -160,7 +160,12 @@ function renderGame() {
     sumEl.textContent = "Sum:" + sum
 
     // Display the cards: this render out first and the secondCard
-    cardsEl.textContent = "Cards:" + cards[0] + " " + cards[1]
+    cardsEl.textContent = "Cards:"
+
+    // LOOP
+    for (let i = 0; i < cards.length; i += 1) {
+        cardsEl.textContent += cards[i] + " "
+    }
 }
 
 // DISPLAY THE MESSAGE ON THE PAGE
@@ -182,13 +187,13 @@ let cardsEl = document.getElementById("cards-el")
 function newCard() {
     console.log("Drawing a new card from the deck")
     // Add to the sum
-    let card3 = 7
+    let card3 = getRandomCard()
     sum += card3
     renderGame()
 
     cards.push(card3)
     // console.log(cards)
-    cardsEl.textContent = "Cards:" + cards
+    cardsEl.textContent = "Cards:" + cards + " "
 }
 
 // ADD TO THE SUM WHEN NEWCARD IS CLICKED
@@ -281,6 +286,107 @@ let cards = [firstCard, secondCard] //array list of item
 // }
 
 
-// FOR LOOPS AND ARRAY
+// FOR LOOPS AND ARRAYS
+// And this is how u can console.log each message on it own
+// let messages = [
+//     "Hey, how's it going?",
+//     "I'm great, thank you! How about you?",
+//     "All good. Been working on my portfolio lately.",
+//     "Same here!",
+//     "sup u",
+//     "cul man",
+//     "ok man"
+// ]
+// // DRY - Don't rerpeat yourself
+// console.log(messages[0])
+// console.log(messages[1])
+// console.log(messages[2])
+// console.log(messages[3])
+
+// for (let i = 0; i < messages.length; i += 1) {
+//     console.log(messages[i])
+// }
+
+// WRITE UR FIRST ARRAY-BASED LOOP
+// let card = [7, 3, 9, 4]
+// for (let i = 0; i < card.length; i += 1) {
+//     console.log(card[i])
+// }
+
+//  FOR LOOPS, ARRAYS AND DOM
+
+// let sentence = ["Hello", " my ", "is ", "per"]
+
+// for (let i = 0; i < sentence.length; i += 1) {
+//     console.log(sentence[i])
+// }
+
+// let greetingEl = document.getElementById("greeting-el")
+
+// greetingEl.textContent = sentence
+// Or
+
+// let sentence = ["Hello", "my", "name", "is", "per"]
+// let greetingEl = document.getElementById("greeting-el")
+
+// for (let i = 0; i < sentence.length; i += 1) {
+//     greetingEl.textContent += sentence[i] + " " //this apply space after each word
+// }
+
+// USE A LOOP TO RENDER CARDS
+
+// HOW CAN WE AVOID TO HARD-CODE CARD VALUES
+// function getRandomCard() {
+
+// }
+// RETURNING VALUES IN FUNCTION
+
+// let player1Time = 102
+// let player2Time = 107
+
+// function getFastestRaceTime() {
+//     if (player1Time < player2Time) {
+//         return player1Time
+//     } else if (player2Time < player1Time) {
+//         return player2Time
+//     } else {
+//         return player1Time
+//     }
+// }
+
+// let fastestRace = getFastestRaceTime()
+// console.log(fastestRace)
+
+// function getTotalRaceTime() {
+//     return player1Time + player2Time
+// }
+// let totalTime = getTotalRaceTime()
+
+// console.log(totalTime)
+
+// USING FUNCTION TO SET THE CARD VALUES
+function getRandomCard() {
+    return 5
+}
+
+// GENERATING RANDOM NUMBERS WITH MATH.RANDOM()
+// let randomNumber = Math.random()
+// console.log(randomNumber)
+
+// what does Math.random() do?
+
+// Your answer: it generate a random number between 0 and 1 (not inclusive of 1)
+
+// MATH.RANDOM()*6
+// let randomNumber = Math.random() * 6
+// console.log(randomNumber)
+
+// FLOORING THE NUMBER WITH MATH.RANDOM()
+// let flooredNumber = Math.floor(3.45632) // this remove the decimals
+// console.log(flooredNumber) 
+
+// USING MATH.RANDOM() AND MATH.FLOOR() TO CREATE A DICE
+let randomNumber = Math.floor (Math.random() * 6)
+console.log(randomNumber)
 
 
