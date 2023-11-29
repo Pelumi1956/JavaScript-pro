@@ -119,10 +119,11 @@
 
 // ADD THE MESSAGE VARIABLE
 
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let sum = firstCard + secondCard
+// let firstCard = getRandomCard()
+// let secondCard = getRandomCard()
+// let sum = firstCard + secondCard
 
+let sum = 0
 let hasBlackJack = false
 let isAlive = true
 
@@ -160,7 +161,7 @@ function renderGame() {
     sumEl.textContent = "Sum:" + sum
 
     // Display the cards: this render out first and the secondCard
-    cardsEl.textContent = "Cards:"
+    cardsEl.textContent = "Cards:" 
 
     // LOOP
     for (let i = 0; i < cards.length; i += 1) {
@@ -186,25 +187,34 @@ let cardsEl = document.getElementById("cards-el")
 // NEW CARD BUTTON
 function newCard() {
     console.log("Drawing a new card from the deck")
-    // Add to the sum
-    let card3 = getRandomCard()
-    sum += card3
-    renderGame()
 
-    cards.push(card3)
-    // console.log(cards)
-    cardsEl.textContent = "Cards:" + cards + " "
+    if (isAlive === true && hasBlackJack === false) {
+        // Add to the sum
+        let card3 = getRandomCard()
+        sum += card3
+
+        cards.push(card3)
+        // console.log(cards)
+        renderGame()
+    }
+    cardsEl.textContent = "Cards:" + cards + " "    
 }
 
 // ADD TO THE SUM WHEN NEWCARD IS CLICKED
 
 // RENAME STARTGAME() 
 function startGame() {
+    isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
     renderGame()
 }
 
 // ARRAY: this is list of items (ie to store all our cards) []. NB: Array start at zero [0]
-let cards = [firstCard, secondCard] //array list of item
+let cards = [] //array list of item
+console.log(cards)
 
 
 
@@ -365,9 +375,25 @@ let cards = [firstCard, secondCard] //array list of item
 // console.log(totalTime)
 
 // USING FUNCTION TO SET THE CARD VALUES
+// function getRandomCard() {
+//     let randomNumber = Math.floor( Math.random() * 13) + 1
+//     return randomNumber
+// }
+// console.log(getRandomCard())
+
+//  COMPLETE THE GETRANDOMNUMBER FUNCTION
+
 function getRandomCard() {
-    return 5
+    let randomNumber = Math.floor( Math.random() * 13) + 1
+    if (randomNumber > 10) {
+        return 10
+    } else if (randomNumber === 1) {
+        return 11
+    } else {
+        return randomNumber
+    }
 }
+// console.log(getRandomCard())
 
 // GENERATING RANDOM NUMBERS WITH MATH.RANDOM()
 // let randomNumber = Math.random()
@@ -382,11 +408,218 @@ function getRandomCard() {
 // console.log(randomNumber)
 
 // FLOORING THE NUMBER WITH MATH.RANDOM()
+
 // let flooredNumber = Math.floor(3.45632) // this remove the decimals
 // console.log(flooredNumber) 
 
 // USING MATH.RANDOM() AND MATH.FLOOR() TO CREATE A DICE
-let randomNumber = Math.floor (Math.random() * 6)
-console.log(randomNumber)
+
+// let randomNumber = Math.floor (Math.random() * 6) 
+// console.log(randomNumber)
+
+// COMPLETING OUR DICE FUNCTION
+
+// console.log(randomNumber)
+
+// function rollDice() {
+//     let randomNumber = Math.floor (Math.random() * 6) + 1
+//     return randomNumber
+// }
+// console.log(rollDice())
+
+// OUR NEW CARD FEATURE IS BROKEN
+
+// THE LOGICAL AND OPERATOR
+// let hasCompleteCourse = true
+// let givesCertificate = true
+
+// function generateCertificate() {
+//     console.log("Generating certificate.....")
+// }
+
+// if (hasCompleteCourse === true) {
+//     if (givesCertificate === true) {
+//         generateCertificate()
+//     }
+// }
+// Or
+// if (hasCompleteCourse === true && givesCertificate === true) {
+//     generateCertificate()
+// }
+//  WRITE YOUR FIRST LOGICAL OPERATOR
+// let hasSolved = false
+// let hasHints = false
+// if (hasSolved === false && hasHints === false) {
+//     ShowSolution()
+// }
+
+// function ShowSolution() {
+//     console.log("Showing the solution.....")
+// }
+
+// THE LOGICAL OR OPERATOR
+// let likesDocumentaries = true
+// let likesStartups = false
+// function recommendMovie() {
+//     console.log("Hey, check out this new file we think you will like!")
+// }
+
+// if (likesDocumentaries === true || likesStartups === true)  {// {||} this is Or which means one of it should be true
+//     recommendMovie()
+// }
+
+//  ONLY TRIGGER NEWCARD() IF YOU'RE ALLOWED TO
+
+// OBJECT SNEAK PEEK
+// NOTE: in object we dont use equals to(=) we use column (:). We dont use let (variable) we clear them if using object. And lastly we use coma(,) to seperate the items.
+// let playerName = "Luxy"
+// let playerChips = 145
+let player = {
+    name: "Luxy",
+    chips: 145,
+    // sayHello: function() {
+    //     console.log("Heisann!")
+    // }
+}
+
+// player.sayHello()
+
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ":" + " " + "$" + player.chips
+
+// INTRO TO OBJECT
+// Object - store data in-depth - composite / complex data type
+// Key-value pairs
+// let course = {
+//     title: "Learn CSS Grid fir free",
+//     lesson: 16,
+//     creator: "Luxy",
+//     length: 63,
+//     level: 2,
+//     isFree: true,
+//     tags: ["html", "css"]
+//} //this is an example of an object
+// how to access the any of the value inside the object
+
+// console.log( course.length )
+//  console.log( course.tags )
+// console.log( course["tags"] )
+
+// CREATE UR FIRST OBJECT
+// let airbnbCastle = {
+//     title: "Live like a king in my castle",
+//     price: 105,
+//     isSuperHost: true,
+//     images: ["img/castle1.png", "img/castle2.png"]
+// }
+
+// console.log(airbnbCastle.title)
+// console.log(airbnbCastle.isSuperHost)
+
+// CONGRATS & RECAP
+
+// NB: this are called data type
+// arrays
+// objects
+// booleans
+// if else statement(else if)
+// comparison operators (<=, ===, >)
+// logical operators (&&, ||)
+// for loops (start, finish, step size)
+// Math object (math.floor, math.random())
+// return statements
 
 
+
+//   PRACTICE
+
+// 1 object and functions
+// let person = {
+//     name: "Pelumhi",
+//     age: 19,
+//     country: "Nigeria"
+// }
+
+// function logData() {
+//     console.log(person.name + " is " + person.age + " years old " + "and lives in " + person.country)
+// }
+// logData()
+
+// 2 else if
+// let age = 15
+// if (age < 6) {
+//     console.log("Free")
+// } else if (age < 18) {
+//     console.log("Child discount")
+// } else if (age < 27) {
+//     console.log("Student discount")
+// } else if (age < 66) {
+//     console.log("Full price")
+// } else  {
+//     console.log("Senior citizen discount")
+// }
+
+// 3 Loops and arrays
+// let largeCountries = ["china",
+// "india",
+// "usa",
+// "indonesia",
+// "pakistan"]
+// console.log("The 5 largest countries in the world:")
+// for (let i = 0; i < largeCountries.length; i += 1) {
+//     console.log("- " + largeCountries[i])
+// }
+
+// 4 Push, pop, unshift, shift challenge
+// let largeCountries = ["Tuvalu",
+// "india",
+// "usa",
+// "indonesia",
+// "Monaco"]
+// // push() & pop():push will push/add items to the end of the array while pop() will remove an item at the end 
+// // unshift() & shift(): shift() will remove an item from the begining of the array while unshift() will add an item at the begining
+// largeCountries.shift()
+// largeCountries.unshift("China")
+
+// // let popped = largeCountries.pop();
+// // console.log(largeCountries)
+// // console.log(popped)
+// // Or
+// largeCountries.pop()
+// largeCountries.push("Pakistan")
+
+// console.log(largeCountries)
+
+// 5 Logical operator 😍
+
+// let dayOfMonth = 13
+// let weekday = "Friday"
+// if (dayOfMonth === 13 && weekday === "Friday") {
+//     console.log("😍")
+// }
+
+// 6 Rock papers scissors
+// let hands = ["rock", "paper", "scissors"]
+
+// function randomItem() {
+//     let random = Math.floor( Math.random() * 3 )
+//     return hands[ random ]
+// }
+// console.log( randomItem() )
+
+// 7 Sorting fruits
+let fruit = ["apple", "orange", "apple", "apple", "orange"]
+let appleShelf = document.getElementById("apple-shelf")
+let orangeShelf = document.getElementById("orange-shelf")
+
+function sortFruit() {
+    for (let i = 0; i < fruit.length; i++) {
+        if (fruit[i] === "apple") {
+            appleShelf.textContent += "apple" + " "
+        }
+        else if (fruit[i] === "orange") {
+            orangeShelf.textContent += "orange" + " "
+        }
+    }
+}
+sortFruit()
