@@ -159,17 +159,18 @@
 //  DISPLAY THE COUNT ON PAGE
 
 // camelCase 
+// let countEl = document.getElementById("count-el")
 
 // let count = 0
 
 // function increment() {
 //     count = count + 1
-    // document.getElementById("count-el").innerText = count
-    // countEl.innerText = count
-    // console.log(count)
+//     // document.getElementById("count-el").innerText = count
+//     countEl.innerText = count
+//     // console.log(count)
 // }
 
-// let countEl = document.getElementById("count-el")
+
 
 // console.log(countEl)
 
@@ -351,7 +352,6 @@
 //     countEl.textContent = count
 // }
 // // save
-// let saveEl = document.getElementById("save-el")
 
 // console.log(saveEl)
 
@@ -363,7 +363,7 @@
 //     // or 
 //     saveEl.textContent += countStr
 //     // NB: Make sure to not delete the existing content of the paragraph
-
+//     console.log(count)
 // }
 
 // // SET THE COUNT TO 0
@@ -378,23 +378,23 @@
 // }
 
 // CONGRAT & RECAP
-// let count = 0
-// let saveEl = document.getElementById("save-el")
-// let countEl = document.getElementById("count-el")
+let count = 0
+let countEl = document.getElementById("count-el")
+let saveEl = document.getElementById("save-el")
 
-// function increment() {
-//     count = count + 1
-//     countEl.textContent = count
-// }
+function increment() {
+    count = count + 1
+    countEl.textContent = count
+}
 
-// function save() {
-//     countStr = " " + count + " - "
-//     saveEl.textContent =saveEl.textContent + countStr
-//     countEl.textContent = 0
-//     count = 0 // So all this will save and restart the count when cliked on
+function save() {
+    countStr = " " + count + " - "
+    saveEl.textContent =saveEl.textContent + countStr
+    countEl.textContent = 0
+    count = 0 // So all this will save and restart the count when cliked on
 
-// }
-// console.log("Let's count people on the subway!")
+}
+console.log("Let's count people on the subway!")
 
 
 
@@ -444,14 +444,7 @@
 
 // console.log("My points:" + " " + bothNo)
 
-// 5 rendering an error message
-// let errorParag = document.getElementById("error")
-// console.log(errorParag)
-// function purchase() {
-//     // console.log("button clicked")
-//     let click1 = "Something went wrong, please try again"
-//     errorParag.textContent = click1
-// }
+
 
 
 
