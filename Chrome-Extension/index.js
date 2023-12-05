@@ -244,6 +244,26 @@
 
 // SAVE THE TAB URL
 
+// HOW TO GET THE CURRENT TAB
+
+// USE THE CHROME API TO GET THE TAB
+// Api: Application programming interface
+
+// DEPLOY THE FINAL VERSION
+
+//       CONGRATS AND RECAP
+// const
+// addEventListener()
+// innerHTML
+// input.value
+// function parameter
+// template string
+// localStorage
+// the JSON object (javaScript Object Notation) this is a very common way of storing data in web dev.
+// object arrays
+
+// Short Note: firstly u addEventListener to a button, fetch out the input.value, take the value store it in an object, convert it to a JSON using JSON.stringify(), Shoving it to localStorage is not big deal u just fetch it out using: JSON.parse() to get it back to js array, u render it out in a function shoving in as parameter, and just use template strings innerHTML to display it on the screen.
+
 
 
 
@@ -288,12 +308,23 @@ const deleteBtn = document.getElementById("delete-btn")
 // tabBtn
 const tabBtn = document.getElementById("tab-btn")
 // console.log(tabBtn)
-const tabs = [
-    {url: "https://www.linkedin.com/in/pelumhi-sidiq/"}
-]
+// const tabs = [
+//     {url: "https://www.linkedin.com/in/pelumhi-sidiq/"}
+// ]
 tabBtn.addEventListener("click", function() {
-    console.log(tabs[0].url)
+    // console.log(tabs[0].url)
+    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    //     let activeTab = tabs[0];
+    //     let activeTabId = activeTab.id
+    // })
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        console.log(tabs)
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+        render(myLeads)
 })
+
+    }) 
 
 deleteBtn.addEventListener("dblclick", function() {
     // console.log("Double clicked!")
@@ -347,3 +378,80 @@ inputBtn.addEventListener("click", function() {
 // localStorage.setItem("myLeads", "www.examplelead.com")
 // console.log(localStorage.getItem("myLeads"))
 // localStorage.clear()
+
+
+//              PRACTICE
+
+// 1 let & const
+// let player = "Pelumhi"
+// let opponent = "Nick"
+// let game = "AmazingFighter"
+
+// let points = 0
+// let hasWon = false
+
+// // playing the game
+// points = 100
+// hasWon = true
+
+// // announcing the winner
+// if (hasWon) {
+//     console.log(`${player} got ${points} points and won the ${game} game!`)
+// } else {
+//     console.log(`The winner is ${opponent}! ${player} lost the game`)
+// }
+
+// 2 log out items in an array
+// let myCourse = ["learn CSS Animations", "UI Design Fundamentals", "Intro to Clean Code"]
+
+// function course(log) {
+//     for (let i = 0; i < log.length; i++) {
+//         console.log(log[i])
+//     }
+// }
+// course(myCourse)
+
+//3 SAVE TO localStorage
+// localStorage.setItem("myCredit", "100")
+// let myCredit = localStorage.getItem("myCredit")
+// console.log(myCredit)
+
+// 4 addEventListener AND OBJECT IN ARRAY
+// let data = [
+//     {
+//         player: "jane",
+//         score: 52
+//     },
+//     {
+//         player: "Mark",
+//         score: 41
+//     }
+// ]
+// let logEl = document.getElementById("log-el")
+// logEl.addEventListener("click", function() {
+//     console.log(data[0].score)
+// })
+
+// 5 GENERATE SENTENCE
+// const sentence = generateSentence("Highest Mountain", ["Mountain Everest", "k2"])
+// console.log(sentence)
+
+// function generateSentence(desk, arr) {
+//     const lastIndex = arr.length - 1
+//     let baseString = `The ${arr.length} ${desk} are `
+//     for (i = 0; i < arr.length; i++) {
+//         if (i === lastIndex) {
+//             baseString += arr[i]
+//         } else {
+//         baseString += arr[i] + ", "
+//         }
+//     }
+//     return baseString
+// }
+
+//  this takes two parameter: a description and an array.
+
+// 6 RENDER IMAGE
+// Brooklyn
+
+//  LEARN JAVASCRIPT-OUTRO
